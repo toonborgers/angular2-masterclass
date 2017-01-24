@@ -27,8 +27,6 @@ export class ContactsEditorComponent implements OnInit {
         this.contact = contact;
         this.eventBusService.emit('appTitleChange', `Editing ${contact.name}`)
       });
-
-    ;
   }
 
   save(contact: Contact) {

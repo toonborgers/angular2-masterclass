@@ -25,7 +25,7 @@ export class ContactsDetailViewComponent implements OnInit {
       .getContact(id)
       .subscribe(contact => {
         this.contact = contact;
-        this.eventBusService.emit('appTitleChange', `${contact.name}`);
+        this.eventBusService.emit('appTitleChange', contact.name);
       });
   }
 
