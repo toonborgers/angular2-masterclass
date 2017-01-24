@@ -4,9 +4,8 @@ import {Contact} from "../models/contact";
 
 import {Observable} from "rxjs/Observable";
 import {Subject} from "rxjs/Subject";
-import "rxjs/add/operator/debounceTime";
-import "rxjs/add/operator/distinctUntilChanged";
-import "rxjs/add/operator/throttleTime";
+
+import "rxjs/add/operator/merge";
 
 @Component({
   selector: 'trm-contacts-list',
@@ -21,16 +20,10 @@ export class ContactsListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.contacts = this.contactsService.getContacts();
+    let getInitialData = this.contactsService.getContacts();
+    let doSearch = this.contactsService.search(this.terms$);
 
-    this.terms$
-      .debounceTime(400)
-      .distinctUntilChanged()
-      .subscribe(term => this.search(term));
-  }
-
-  search(term: string) {
-    this.contacts = this.contactsService.search(term);
+    this.contacts = doSearch.merge(getInitialData);
   }
 
 }
