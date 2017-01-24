@@ -17,6 +17,7 @@ export class TabsComponent {
   }
 
   select(newSelected: TabComponent) {
-    this.tabs.forEach(tab => tab.selected = (tab === newSelected));
+    this.tabs.find(tab => tab === newSelected)
+      .selected = true;
   }
 }

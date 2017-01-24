@@ -13,5 +13,3 @@ export class TabComponent {
     tabsComponent.addTab(this);
   }
 }
-
-
