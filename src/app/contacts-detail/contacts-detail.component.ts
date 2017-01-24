@@ -10,6 +10,7 @@ import {Contact} from "../models/contact";
 })
 export class ContactsDetailComponent {
   @Input() contact: Contact;
+
   @Output() edit = new EventEmitter<any>();
   @Output() back = new EventEmitter<any>();
 }
