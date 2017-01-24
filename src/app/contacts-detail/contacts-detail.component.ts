@@ -1,6 +1,4 @@
-import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
-import {ContactsService} from "../contacts.service";
+import {Component, Input, Output, EventEmitter} from "@angular/core";
 import {Contact} from "../models/contact";
 
 @Component({
@@ -11,6 +9,6 @@ import {Contact} from "../models/contact";
 export class ContactsDetailComponent {
   @Input() contact: Contact;
 
-  @Output() edit = new EventEmitter<any>();
-  @Output() back = new EventEmitter<any>();
+  @Output() edit = new EventEmitter<void>();
+  @Output() back = new EventEmitter<void>();
 }
