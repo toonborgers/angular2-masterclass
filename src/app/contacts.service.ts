@@ -4,7 +4,6 @@ import {Http, URLSearchParams} from "@angular/http";
 import {API_ENDPOINT_TOKEN} from "./app.config";
 import {Contact} from "./models/contact";
 import {Observable} from "rxjs/Observable";
-
 import "rxjs/add/operator/debounceTime";
 import "rxjs/add/operator/distinctUntilChanged";
 import "rxjs/add/operator/switchMap";

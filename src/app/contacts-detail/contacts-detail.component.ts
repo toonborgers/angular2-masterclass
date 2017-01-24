@@ -6,9 +6,15 @@ import {Contact} from "../models/contact";
   templateUrl: './contacts-detail.component.html',
   styleUrls: ['./contacts-detail.component.css']
 })
-export class ContactsDetailComponent {
+export class ContactsDetailComponent  {
+
   @Input() contact: Contact;
 
   @Output() edit = new EventEmitter<void>();
   @Output() back = new EventEmitter<void>();
+
+  constructor() {
+  }
+
+
 }
