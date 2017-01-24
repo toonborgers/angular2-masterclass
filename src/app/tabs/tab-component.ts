@@ -12,7 +12,6 @@ export class TabComponent {
   constructor(private tabsComponent: TabsComponent) {
     tabsComponent.addTab(this);
   }
-
 }
 
 

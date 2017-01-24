@@ -5,11 +5,8 @@ import {TabComponent} from "./tab-component";
   selector: 'trm-tabs',
   templateUrl: './tabs-component.html'
 })
-export class TabsComponent implements OnInit {
+export class TabsComponent {
   private tabs: Array<TabComponent> = [];
-
-  ngOnInit(): void {
-  }
 
   addTab(tab: TabComponent) {
     this.tabs.push(tab);
@@ -19,7 +16,7 @@ export class TabsComponent implements OnInit {
     }
   }
 
-  select(toSelect: TabComponent) {
-    this.tabs.forEach(tab => tab.selected = (tab === toSelect));
+  select(newSelected: TabComponent) {
+    this.tabs.forEach(tab => tab.selected = (tab === newSelected));
   }
 }
